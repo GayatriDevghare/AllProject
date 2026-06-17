@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Add Question</title>
+    {% load static %}
+
+<link rel="stylesheet" href="{% static 'css/questions.css' %}">
+
+</head>
+
+<body style="background-image:url('https://img.freepik.com/free-vector/puzzle-solving-question-mark-background-guidance-support_1017-43014.jpg'); background-repeat: no-repeat; background-size: cover;">
+    <nav style="margin-left: 30%; margin-top: 2%;">
+    <a href="/Examapp/giveaddquestion/"> Add Question</a> &nbsp; &nbsp; 
+    <a href="/Examapp/giveviewquestion/">View Question</a> &nbsp; &nbsp; 
+    <a href="/Examapp/giveupdatequestion/"> Update Question</a> &nbsp; &nbsp; 
+    <a href="/Examapp/givedeletequestion/"> Delete Question</a> &nbsp; &nbsp;
+    <a href="/Examapp/givemeshowallquestion/"> Show All Questions</a> &nbsp; &nbsp;
+    <a href="/Examapp/">Home Page</a>
+    </nav>
+<hr>
+
+<form style="margin-left: 40%; margin-top:6%; margin-right: 10%; color: black;">
+    <input type="number" name="qno" placeholder="Enter Question Number" style="border:solid black 2px"/><br><br>
+    <input type="text" name="qtext" placeholder="Enter Question Text" style="border:solid black 2px"/><br><br>
+    <input type="text" name="op1" placeholder="Enter Option 1" style="border:solid black 2px" /><br><br>
+    <input type="text" name="op2" placeholder="Enter Option 2"  style="border:solid black 2px"/><br><br>
+    <input type="text" name="op3" placeholder="Enter Option 3" style="border:solid black 2px"/><br><br>
+    <input type="text" name="op4" placeholder="Enter Option 4" style="border:solid black 2px"/><br><br>
+    <input type="text" name="subject" placeholder="Enter Subject" style="border:solid black 2px" /><br><br>
+    <input type="text" name="answer" placeholder="Enter Answer" style="border:solid black 2px" /><br><br>
+
+    <button type="submit" value="Add Questions" formaction="/Examapp/addquestion/" style="background-color:black; color:white; margin-left:4%;">Add Questions</button><br><br>
+    <span>{{msg}}</span>
+</form>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete question</title>
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/questions.css' %}">
+
+</head>
+
+<body style="background-image:url('https://www.cdc.gov/clean-hands/media/images/Untitled-design-20.png'); background-repeat: no-repeat; background-size: cover;">
+    <nav style="margin-left: 30%; margin-top: 2%;">
+    <a href="/Examapp/giveaddquestion/"> Add Question</a> &nbsp; &nbsp; 
+    <a href="/Examapp/giveviewquestion/">View Question</a> &nbsp; &nbsp; 
+    <a href="/Examapp/giveupdatequestion/"> Update Question</a> &nbsp; &nbsp; 
+    <a href="/Examapp/givedeletequestion/"> Delete Question</a> &nbsp; &nbsp;
+    <a href="/Examapp/givemeshowallquestion/"> Show All Questions</a> &nbsp; &nbsp;
+    <a href="/Examapp/">Home Page</a>
+</nav>
+    <hr>
+
+    <form style="margin-left: 40%; margin-top:6%; margin-right: 10%; color: white;">
+        qno : <input type="number" name="qno" placeholder="Enter Question number" value="{{qdata.qno}}" required>
+        <br><br>
+        qtext : <input type="text" name="qtext" placeholder="Enter Qjuestion text" value="{{qdata.qtext}}" style="border:solid black 2px"> <br><br>
+        op1 :<input type="text" name="op1" placeholder="Enter option 1" value="{{qdata.op1}}" style="border:solid black 2px"> <br><br>
+        op2 :<input type="text" name="op2" placeholder="Enter option 2" value="{{qdata.op2}}" style="border:solid black 2px"> <br><br>
+        op3 :<input type="text" name="op3" placeholder="Enter option 3" value="{{qdata.op3}}" style="border:solid black 2px"> <br><br>
+        op4 :<input type="text" name="op4" placeholder=" Enter option 4" value="{{qdata.op4}}" style="border:solid black 2px"> <br><br>
+        subject :<input type="text" name="subject" placeholder="Enter subject" value="{{qdata.subject}}" style="border:solid black 2px" required>
+        <br><br>
+        ans : <input type="text" name="answer" placeholder="Enter answer" value="{{qdata.ans}}"> <br><br>
+
+        <button type="submit" value="View Questions" formaction="/Examapp/viewquestion/" style="background-color:gray; color:white; margin-left:4%;">View Questions</button>
+        <button type="submit" value="Delete Questions" formaction="/Examapp/deletequestion/" style="background-color:gray; color:white; margin-left:4%;">Delete Questions</button><br><br>
+
+
+        <span>{{msg}}</span>
+    </form>
+
+</body>
+
+</html>

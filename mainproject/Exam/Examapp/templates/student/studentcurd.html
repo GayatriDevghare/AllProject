@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body style="background-image:url('https://cdn.vectorstock.com/i/500p/13/64/school-banner-with-student-vector-23061364.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+    <form style="margin-left: 10%; margin-top: 7%; margin-right: 10%; color: black;">
+        <div style="padding-top: 50px; padding-left: 60px ; padding-bottom: 20px;">
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label">Student Name</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="inputEmail3" name="studentname" value="{{examdb.studentname}}">
+    </div>
+</div>
+<div class=" row mb-3">
+                    <label class="col-sm-2 col-form-label">Password</label>
+                    <div class="col-sm-6">
+                        <input type="password" class="form-control" id="inputPassword3" name="password" value="{{examdb.password}}" style="border:solid black 2px">
+                    </div>
+                </div>
+
+                <br>
+
+                <button type="submit" class="btn btn-primary" style="margin-left: 170px; background-color:yellow; color:black;" formaction="/Examapp/addstudent/" style="border:solid black 2px">Add Student</button>
+                <button type="submit" class="btn btn-primary" style="margin-left: 170px; background-color:pink; color:black;" formaction="/Examapp/showstudent/" style="border:solid black 2px">View Student</button>
+                <button type="submit" class="btn btn-primary" style="margin-left: 170px; background-color:cyan; color:black;" formaction="/Examapp/updatestudent/" style="border:solid black 2px">Update Student</button><br><br>
+                <button type="submit" class="btn btn-primary" style="margin-left: 170px; background-color:lightblue; color:black;" formaction="/Examapp/deletestudent/" style="border:solid black 2px">Delete Student</button>
+                <button type="submit" class="btn btn-primary" style="margin-left: 170px; background-color:lightgreen; color:black;" formaction="/Examapp/showallstudent/" style="border:solid black 2px">Show All Student</button>
+
+            </div>
+    </form>
+        <center><span style="color: black ; ">{{msg}}</span></center>
+</body>
+
+</html>

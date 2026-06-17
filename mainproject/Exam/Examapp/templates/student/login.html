@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+
+{% comment %} <link rel="stylesheet" href="{% static 'css/student.css' %}"> {% endcomment %}
+
+</head>
+<body style="background-image:url('https://i.pinimg.com/736x/37/ff/06/37ff06be9369a9056cb649eeb4f9140a.jpg'); background-repeat: no-repeat; background-size: cover;" >
+        <a href="/Examapp/">Home Page</a>
+
+    <form style="margin-left: 40%; margin-top: 17%; margin-right: 10%; color: black;">
+        Username : <input type="text" name="username" placeholder="Enter your username" style="border:solid black 2px"><br> <br>
+        Password :  <input type="text" name="password" placeholder="Enter your password" style="border:solid black 2px"> <br> <br>
+        <button type="submit" value="Sign In" style=" background-color:lightgreen; color:black; margin-left:4%;" formaction="/Examapp/login/">Sign In</button> &nbsp; &nbsp;&nbsp;&nbsp;
+        <button type="submit" value="Sign Up" style=" background-color:lightgreen; color:black; margin-left:4%;" formaction="/Examapp/givemeregister/">Sign Up</button><br><br>
+        <span>{{msg}}</span>
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+
+<link rel="stylesheet" href="{% static 'css/questions.css' %}">
+
+</head>
+<body style="background-image:url('https://static.vecteezy.com/system/resources/previews/014/324/755/non_2x/white-question-mark-on-background-free-space-for-business-or-educational-design-banner-illustration-free-photo.jpg');background-image:linear-gradient()to right,#87CEEB,#000080();background-repeat: no-repeat; background-size: cover;">
+
+        <span style="margin-left: 30%; margin-top: 5%;"> Welcome {{request.session.username}}</span>
+        <br><br><hr>
+    <form style="margin-left: 40%; margin-top:4%; margin-right: 10%; color: black;">
+        Subject : <select name="subject">
+            <option >Select a subject</option>
+            <option >python</option>
+            <option >math</option>
+        </select> <br><br><br>
+
+        <button type="submit" value="Start Test" formaction="/Examapp/starttestpage/" style=" background-color:gray; color:black; margin-left:4%;">Start Test</button>
+    </form>
+</body>
+</html>

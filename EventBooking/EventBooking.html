@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .screen {
+            background-color: #ccc;
+            height: 50px;
+            margin: 20px auto;
+            width: 80%;
+            border-radius: 10px;
+            text-align: center;
+            line-height: 50px;
+            font-weight: bold;
+        }
+
+        .seats {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 10px;
+            justify-content: center;
+            max-width: 80%;
+            margin: 0 auto;
+        }
+
+        .seat {
+            background-color: #444;
+            border: 1px solid #999;
+            border-radius: 5px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+        }
+
+        .seat.selected {
+            background-color: #638fff;
+        }
+
+        .seat.occupied {
+            background-color: #f50e3c96;
+            cursor: not-allowed;
+        }
+
+        .legend {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .legend div {
+            display: flex;
+            align-items: center;
+            margin: 0 15px;
+        }
+
+        .legend div span {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+            display: inline-block;
+        }
+
+        .legend .available span {
+            background-color: #444;
+        }
+
+        .legend .selected span {
+            background-color: #638fff;
+        }
+
+        .legend .occupied span {
+            background-color: #f50e3c96;
+        }
+
+        .summary {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #638fff;
+            border: none;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #4b47d4;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Event Booking</h1>
+    </header>
+
+    <div class="container">
+        <div class="screen">Screen</div>
+
+        <div class="seats">
+            <!-- Example of 100 seats represented as divs -->
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat occupied"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat occupied"></div>
+            <div class="seat"></div>
+            <!-- Add more seats as needed -->
+        </div>
+
+        <div class="legend">
+            <div class="available"><span></span>Available</div>
+            <div class="selected"><span></span>Selected</div>
+            <div class="occupied"><span></span>Occupied</div>
+        </div>
+
+        <div class="summary">
+            <p id="selected-seats">Selected Seats: 0</p>
+            <p id="total-price">Total Price: $0</p>
+        </div>
+
+        <button id="book-button">Book Now</button>
+    </div>
+
+    <script>
+        const seats = document.querySelectorAll('.seat:not(.occupied)');
+        const selectedSeatsDisplay = document.getElementById('selected-seats');
+        const totalPriceDisplay = document.getElementById('total-price');
+        const ticketPrice = 100; // Example ticket price
+
+        seats.forEach(seat => {
+            seat.addEventListener('click', () => {
+                seat.classList.toggle('selected');
+                updateSummary();
+            });
+        });
+
+        function updateSummary() {
+            const selectedSeats = document.querySelectorAll('.seat.selected');
+            const selectedCount = selectedSeats.length;
+            const totalPrice = selectedCount * ticketPrice;
+
+            selectedSeatsDisplay.textContent = `Selected Seats: ${selectedCount}`;
+            totalPriceDisplay.textContent = `Total Price: $${totalPrice}`;
+        }
+
+        document.getElementById('book-button').addEventListener('click', () => {
+            alert('Seats booked successfully!');
+        });
+    </script>
+</body>
+</html>

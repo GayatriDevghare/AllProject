@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Add Student</title>
+    {% load static %}
+
+<link rel="stylesheet" href="{% static 'css/questions.css' %}">
+
+</head>
+
+<body style="background-image:url('https://img.freepik.com/free-vector/blank-sign-template-with-kids-reading_1308-33765.jpg'); background-repeat: no-repeat; background-size: cover;" >
+    <a href="/Examapp/">Home Page</a>
+
+
+<hr>
+
+<form style="margin-left: 40%; margin-top: 14%; margin-right: 10%; color: black;">
+    Name:<input type="text" name="username" placeholder="Enter Name" value="{{sdata.name}}" style="border:solid black 2px" required><br><br>
+    Password: <input type="password" name="password" placeholder="Enter password" value="{{sdata.password}}" style="border:solid black 2px" ><br><br>
+
+
+    <button type="submit" value="Add Student" formaction="/Examapp/addstudent/"  style=" background-color:lightpink; color:black; margin-left:4%;" >Add Student</button><br><br>
+    <span>{{msg}}</span>
+</form>
+
+
+
+</body>
+
+</html>

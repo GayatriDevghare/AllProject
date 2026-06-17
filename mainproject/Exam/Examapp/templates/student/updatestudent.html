@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Student</title>
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/questions.css' %}">
+</head>
+
+<body style="background-image:url('https://i.pinimg.com/736x/10/fe/8a/10fe8ad1193ca8eb0cbd560f8e6a9d3c.jpg'); background-repeat: no-repeat; background-size: cover;">
+    <a href="/Examapp/" style="margin-left:40%; margin-top: 3%;">Home Page</a>
+    <form style="margin-left: 40%; margin-top: 5%; margin-right: 10%; color: black;"><div style="padding-top: 50px; padding-left: 60px ; padding-bottom: 20px;">
+        Name: <input type="text" name="username" placeholder="Enter Name" value="{{sdata.name}}" style="border:solid black 2px"> <br><br>
+        Password:<input type="password" name="password" placeholder="Enter Password" value="{{sdata.password}}" style="border:solid black 2px"> <br><br>
+
+        <input type="submit" value="Update Student" style=" background-color:black; color:white; margin-left:4%;"  formaction="/Examapp/updatestudent/">
+
+
+
+    </form> <br><br>
+    <span>{{msg}}</span>
+</body>
+
+</html>

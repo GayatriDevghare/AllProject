@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    {% load static %}
+    <link rel="stylesheet" href="/static/css/style.css">
+    <style>
+        input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: black;
+        }
+
+        input[type="submit"]:hover {
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body style="margin-left: 10%; margin-top: 5%; margin-right: 10%;  font-family: Arial, sans-serif; background-image:linear-gradient(to right,black,white);">
+    <form>
+        <input type="submit" value="Question Operation" formaction="/Examapp/givemequestioncurd/">
+        <hr  style=" width: 70%;"><br><br>
+        <input type="submit" value="Student Operation" formaction="/Examapp/givemestudentcurd/">
+        <hr  style=" width: 70%;"><br><br>
+        <input type="submit" value="Student Login Operation" formaction="/Examapp/givemelogin/">
+        <hr style=" width: 70%;"><br><br>
+        <input type="submit" value="Result all User" formaction="/Examapp/getallresultpage/">
+        <hr>
+
+    </form>
+</body>
+
+</html>
