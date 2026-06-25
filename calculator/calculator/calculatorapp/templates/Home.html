@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator Operations</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    />
+    </head>
+
+    <body
+    style= background-size: cover; background-repeat: no-repeat; height: 100vh"
+    >
+    <div
+    class="container d-flex justify-content-center align-items-center h-100 ;"
+    >
+    <div class="card shadow-lg p-4" style="width: 500px">
+        <h2 class="text-center mb-4 text-primary">Calculator Operations</h2>
+
+        <form class="d-flex flex-column gap-3">
+            <button type="submit" formaction="/capp/getaddpage/" class="btn btn-success">   Addition
+            </button>
+
+            <button type="submit" formaction="/capp/getsubpage/" class="btn btn-danger">
+                Subtraction
+            </button>
+            
+            <button type="submit" formaction="/capp/getmulpage/" class="btn btn-warning">
+                Multiplication
+            </button>
+
+            <button type="submit" formaction="/capp/getdivpage/" class="btn btn-info">
+                Division
+            </button>
+
+        </form>
+
+        {% if msg %}
+        <div class="alert alert-primary mt-4 text-center">{{ msg }}</div>
+        {% endif %}
+        </div>
+    </div>
+</body>
+</html>
